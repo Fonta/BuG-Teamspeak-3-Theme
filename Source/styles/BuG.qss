@@ -1,0 +1,394 @@
+/*
+ * TeamSpeak 3 BuG Qt StyleSheet V1.5
+ *
+ */
+
+/* Use this to change the application default font. By default we leave it up to Qt to decide which font to pick. */
+/*QWidget {
+	font-family: "Segoe UI";
+	font-size: 9pt;
+}*/
+
+/* Used to hide the scrollbar, set it to around 12px to make it visible */
+QTreeView QScrollBar:vertical { 
+	width: 0px;
+}
+
+QMainWindow	{ /* main teamspeak window. Place backgrounds for the entire teamspeak screen here. You can also use 'image' to place an extra image */
+ 	background-color: #ffffff;
+	color: #000000;
+}
+
+MainWindow ImprovedToolBar { /* Set this to control the background of the master volume icon */
+	background: #2F2F2F;
+	padding: 5px;
+	border: 0px;
+}
+
+QWidget#MainWindowServerTabsWidget { /* Widget around and behind the treeview and infoframe. */
+	/*border: 0px;*/
+	border-top: 3px solid #f5634a;
+	show-decoration-selected: 0;
+	background: rgba(195,195,195,0.2);
+}
+QTabBar {
+
+}
+ImprovedTabWidget {
+	background-color: #ff0000;
+}
+
+ImprovedTabBar {
+	background-color: #f3f3f3;
+}
+
+QTabBar::tab { /* skins the actual tab. Be sure to check the results with different numbers of tabs */
+	padding: 5px 5px 5px 10px;
+	border: 1px solid #d7d7d7;
+	border-bottom: 0px solid #d7d7d7;
+	border-top: 3px solid #d7d7d7;
+	background-color: #e5e5e5;
+}
+
+QTabBar::tab:selected,
+QTabBar::tab:selected:hover
+{
+	border-top: 3px solid #cccccc;
+	background-color: #ffffff;
+}
+
+QTabBar::tab:bottom { /* skins the actual tab. Be sure to check the results with different numbers of tabs */
+	min-width: 8px;
+	min-height: 20px;
+	padding: 3px 4px 3px;
+	background-color: #e5e5e5;
+	border: 1px solid #d7d7d7;
+	border-top: 3px solid #e5e5e5;
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+} 
+
+QTabBar::tab:selected:bottom,
+QTabBar::tab:selected:bottom:hover  /* Skins both the normally selected (Currently active) tab and the hover state of the active tab (The same in this case) */
+{
+	background-color: #ffffff;
+	border: 1px solid #d7d7d7;
+	border-top: 3px solid #f5634a;
+	margin-bottom: 0px;
+}
+
+QTabBar::tab:hover /* Skins the hover state of the tab. */
+{
+	background-color: #f5634a;
+	border: 0px;
+	color: #ffffff;
+	margin-bottom: 0px;
+}
+
+QTreeView
+{   
+	padding: 0px;
+	padding-top: 5px;
+	border: 1px solid #d7d7d7;
+	background-attachment:fixed;
+	show-decoration-selected: 0;
+	qproperty-alternatingRowColors: 0;
+}
+
+InfoFrame {
+	background-color: #434343;
+	border: 1px solid #d7d7d7;
+}
+
+QSplitter::handle {
+	background: rgba(195,195,195,0.2);
+	margin: 0px;
+	border-radius: 0px solid transparent;
+}
+
+MainWindow QWidget::pane { 
+	/* Resizable pane inside the QWidget section. (Includes TreeView and InfoFrame in the mainwindow) but also the Permissions overview. I'd recommend being more defined so it only changes the mainwindow if you want to use a background and dont have to worry abou the rest */
+}
+
+QWidget#MainWindowChatWidget { /* Widget behind and around the chat area. Use this if you want to have a border or image around the chat area */
+	background: rgba(195,195,195,0.2);
+}
+
+ChatTab { /* The actual chat area on the MainWindow. Everything you put here actually goes INSIDE the chat box. Use the  widget if you want to put thigns behind it. */
+	background-color: #efefef;
+	border: 1px solid #d7d7d7;
+	border-radius: 0px;
+	color: #000000;
+	padding: 1px 2px 1px 5px;
+
+}
+
+QFrame#bookmarksTopFrame { /* Top bar in the bookmarks manager */
+/*	background-color: #2e3132;
+	border-image: url('Styles/BuG/Dialog/listview.png');
+	border-top: 4px transparent;
+	border-bottom: 4px transparent;
+	border-right: 4px transparent;
+	border-left: 4px transparent;
+	color: #cbbf57;*/
+}
+
+QTextEdit#ChatLineEdit[helpTextVisible="true"]  {
+	color: #909090;
+}
+
+QTextEdit#ChatLineEdit[helpTextVisible="false"] {
+ color: normal;
+}
+
+QStatusBar QLabel {
+  padding: 0px 3px;
+  border: 0px;
+}
+
+QTextEdit#InfoFrame {
+     background-color: palette(base);
+     background-image: url('styles:BuG/images/logo-128x128.png');
+     background-repeat: none;
+     background-position: bottom right;
+     background-attachment: fixed;
+}
+
+QTextEdit#ChatTab {
+     background-color: palette(base);
+     background-image: url('styles:BuG/images/chatlog-128x96.png');
+     background-repeat: none;
+     background-position: bottom right;
+     background-attachment: fixed;
+}
+
+QListWidget#localIconsListWidget::item:selected, QListWidget#remoteIconsListWidget::item:selected {
+	border: 1px solid darkGray;
+}
+
+QTreeView#ServerTreeView {
+	/*alternate-background-color: transparent;*/
+	qproperty-rootIsDecorated: false;
+}
+
+QLabel#OptionsHeadlineTitleLabel {
+	color: black;
+	font-weight: bold;
+}
+
+QLabel#OptionsHeadlineDescriptionLabel {
+	color: black;
+}
+
+QToolButton#newBookmarkButton, QToolButton#newBookmarkFolderButton, QToolButton#removeBookmarkButton {
+	color: white;
+}
+
+QToolButton#newBookmarkButton:hover, QToolButton#newBookmarkFolderButton:hover, QToolButton#removeBookmarkButton:hover {
+	color: black;
+}
+
+QLabel#NewsLeftLabel {
+	padding-right: 6px;
+}
+
+QTableView#clientsTableView, QTableView#banTableView {
+	qproperty-alternatingRowColors: true;
+}
+
+QLabel#appNameLabel {
+	color: #455573;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+QWidget#HeadlineLabel {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop: 0 #819CBD, stop: 1 #CDD7E5);
+}
+
+/* ################################## */
+/* QSLIDER || volume control						*/
+/* ################################## */
+
+/* #### */
+/* http://qt-project.org/doc/qt-4.7/stylesheet-examples.html#id-8add32f5-a438-4cc5-8e6d-ac3784888b07 */
+/* #### */
+
+MainWindow ImprovedToolBar QLabel  { /* Set this to control the background of the master volume icon */
+	background: transparent;
+}
+
+
+QSlider:horizontal	{	margin-right: 10px;	}
+QSlider:vertical	{	margin-right: 0px; }
+
+QSlider::groove:horizontal {
+	border: 0px solid transparent;
+	height: 1px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+	background-color: #9e9995;
+	margin: 2px 0;
+}
+
+QSlider::add-page:horizontal { } /* This can be used to skin the parts right of the slider */
+QSlider::sub-page:horizontal { background-color: #f5634a;  } /* This can be used to skin the parts left of the slider */
+
+QSlider::handle:horizontal {
+	background-color: #9e9995;
+	border: 0px solid;
+	width: 8px;
+	height: 14px;
+	margin: -4px 0; /* Negative margin is used to make sure it's larger than the 1px of the groove */
+	border-radius: 0px;
+}
+
+QSlider::groove:vertical {
+	border: 0px solid;
+	width: 1px; 
+	background-color: #9e9995;
+	margin: 0 2px;
+}
+
+QSlider::handle:vertical {
+	background-color: #9e9995;
+	border: 0px solid;
+	height: 14px;
+	width: 8px;
+	margin: 0px -4px;
+	border-radius: 0px;
+}
+
+/* ----------------------------------------------------------------	*/
+/* 			QMenuBar | Top menu (Connections, Bookmarks)			*/
+/* ---------------------------------------------------------------- */
+
+QMenuBar { /* The top menu bar in the main window */
+  	background-color: #222222;
+	padding:  5px;
+}
+
+QMenuBar::item { /* An item on the top menu bar in the main window */
+	background-color: transparent;
+	color: #cccccc;
+}
+
+QMenuBar::item:selected, /* An active item on the top menu bar. Hover state and selected state works a bit weird, so you probably want to keep these the same */
+QMenuBar::item:hover {
+	color: #ffffff;
+}
+
+/* ----------------------------------------------------------------	*/
+/* 								TreeView 							*/
+/* ---------------------------------------------------------------- */
+QTreeView::item:hover {
+	background: rgba(195,195,195,0.2);
+}
+QTreeView::item:selected:active{
+	background: rgba(195,195,195,0.4);
+	color: #000000;
+}
+QTreeView::branch:hover 		{	background-color: transparent;	}
+QTreeView::item:selected:!active{	
+
+	background: rgba(195,195,195,0.2);
+
+	}
+
+/* ----------------------------------------------------------------	*/
+/* 								Tree Branch							*/
+/* ---------------------------------------------------------------- */
+
+QTreeView::branch:selected {	background-color: transparent;	}
+
+QTreeView::branch:has-siblings:adjoins-item,
+QTreeView::branch:!has-children:!has-siblings:adjoins-item { border-image: none; }
+
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+	border-image: none;
+	background-color: transparent;
+	image: url(styles:/BuG/images/tree-collapse-normal.png);
+}
+QTreeView::branch:has-children:!has-siblings:closed:hover,
+QTreeView::branch:closed:has-children:has-siblings:hover {
+	border-image: none;
+	background: rgba(195,195,195,0.2);
+	/*image: url(styles:/BuG/Misc/TreeView/tree-collapse-normal.png);*/
+}
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings  {
+	border-image: none;
+	background-color: transparent;
+	image: url(styles:/BuG/images/tree-expand-normal.png);
+}
+QTreeView::branch:open:has-children:!has-siblings:hover,
+QTreeView::branch:open:has-children:has-siblings:hover  {
+	border-image: none;
+	background: rgba(195,195,195,0.2);
+	/*image: url(styles:/BuG/Misc/TreeView/tree-expand-normal.png);*/
+}
+
+
+
+
+/* ----------------------------------------------------------------	*/
+/* 								QToolBar							*/
+/* ---------------------------------------------------------------- */
+
+QToolBar { }
+
+ QToolBar::handle { /* Handle at the left of the horizontal toolbar which you can drag to place somehwere else */ 
+    /*background-image: none;*/
+	/*background-color: transparent;*/
+	width: 5px;
+	height: 5px;
+	margin-left: 3px;
+ }
+
+/* ################################## */
+/* The buttons on the toolbar start here. 		*/
+/* ################################## */
+
+QToolBar QToolButton { /* Button on Toolbar */  
+	border-top: 1px solid transparent;
+	padding: 0px 15px;
+	height: 25px;
+	margin: 0px 0px;
+} 
+
+QToolBar QToolButton[popupMode="1"] { /* Default state of toolbutton with dropdown menu (Such as the Away button or Mute Speakers */
+	padding: 0px 20px 0px 15px;
+	border-top: 1px solid transparent;
+	color: rgba(150,150,150,0.4); /* Use color to change the color of the arrow for the popup menu*/ 
+}
+
+QToolBar QToolButton:hover, /* hover state of the toolbuttons */
+QToolBar QToolButton:pressed, 
+QToolBar QToolButton:checked { 
+	background: rgba(100,100,100,0.1);
+	border: 1px solid rgba(150,150,150,0.4);
+}
+
+QToolBar QToolButton[popupMode="1"]:hover,
+QToolBar QToolButton[popupMode="1"]:pressed,
+QToolBar QToolButton[popupMode="1"]:checked { /* hover state of the toolbutton with dropdown menu (Such as Away or Mute Output */
+	background: rgba(100,100,100,0.1);
+	border: 1px solid rgba(150,150,150,0.4);
+	padding: 0px 20px 0px 15px;
+	color: rgba(150,150,150,0.4); 
+}
+QToolBar QToolButton[popupMode="1"]:hover,
+QToolBar QToolButton[popupMode="1"]:checked {
+	color: #888888;
+}
+
+ /* state of the toolbutton when an option is selected (Such as having your microphone muted) */
+QToolButton#serverQueryAdvancedButton:checked {
+	padding: -2px 0px -3px;
+}
+
+QToolBar QToolButton:disabled {
+	padding: 0px 15px -1px;
+}
+
+QToolBar QToolButton::menu-button {	border: 1px solid transparent; width: 20px;  } 
